@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: inbox
+      POSTGRES_PASSWORD: inboxpass
+      POSTGRES_DB: inboxdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - inbox_pgdata:/var/lib/postgresql/data
+volumes:
+  inbox_pgdata:
